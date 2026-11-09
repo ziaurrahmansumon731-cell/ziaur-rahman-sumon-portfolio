@@ -1,0 +1,1659 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sumon | Portfolio</title>
+
+    <style>
+
+        .profile-image img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+        }
+
+        
+        .profile-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            max-width: 300px;
+        }
+
+            .profile-card h2 {
+                color: #38bdf8;
+                margin-bottom: 10px;
+            }
+
+            .profile-card p {
+                color: white;
+                margin-top: 8px;
+            }
+
+        /* Basic Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        /* Navigation */
+
+        /* ===== Professional Navigation ===== */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: rgba(7, 13, 27, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            min-height: 78px;
+            margin: auto;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        /* Logo */
+
+        .nav-logo {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+            .nav-logo span {
+                color: #38bdf8;
+            }
+
+        /* Navigation Links */
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+            .navbar a {
+                position: relative;
+                color: #cbd5e1;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                transition: 0.3s;
+            }
+
+                .navbar a::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -8px;
+                    width: 0;
+                    height: 2px;
+                    background: #38bdf8;
+                    transition: 0.3s;
+                }
+
+                .navbar a:hover {
+                    color: #38bdf8;
+                }
+
+                    .navbar a:hover::after {
+                        width: 100%;
+                    }
+
+            /* ===== Navigation CV Button ===== */
+
+            .navbar .nav-cv {
+                background: #38bdf8;
+                color: #082f49;
+                padding: 10px 16px;
+                border-radius: 7px;
+                font-weight: 700;
+                transition: 0.3s ease;
+            }
+
+                .navbar .nav-cv:hover {
+                    background: #7dd3fc;
+                    color: #082f49;
+                    transform: translateY(-2px);
+                }
+
+                .navbar .nav-cv::after {
+                    display: none;
+                }
+
+
+        /* Let's Talk Button */
+
+        .nav-button {
+            padding: 11px 19px;
+            background: #38bdf8;
+            color: #082f49;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+            .nav-button:hover {
+                background: #7dd3fc;
+                transform: translateY(-2px);
+            }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+
+            .nav-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 18px 15px;
+            }
+
+            .navbar {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .nav-logo {
+                font-size: 24px;
+            }
+
+            .nav-button {
+                padding: 9px 13px;
+            }
+
+            .navbar {
+                gap: 15px;
+            }
+
+                .navbar a {
+                    font-size: 12px;
+                }
+        }
+
+        /* Smooth Section Navigation */
+
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 10%;
+            gap: 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+            .hero-content h1 {
+                font-size: 55px;
+                margin: 15px 0;
+            }
+
+            .hero-content h2 {
+                color: #cbd5e1;
+                margin-bottom: 20px;
+            }
+
+        .profile-image {
+            flex: 0 0 300px;
+        }
+
+            .profile-image img {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid #38bdf8;
+                display: block;
+            }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .profile-image {
+                flex: none;
+            }
+
+                .profile-image img {
+                    width: 200px;
+                    height: 200px;
+                }
+        }
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 10%;
+            background: #111c32;
+        }
+
+            .about h2 {
+                color: #38bdf8;
+                margin-bottom: 20px;
+            }
+
+            .about p {
+                color: #cbd5e1;
+                line-height: 1.8;
+            }
+
+        /* Skills Section */
+
+        /* ===== Skills Section ===== */
+
+        .skills {
+            padding: 80px 20px;
+            background: #0f172a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+            .skills h2 {
+                font-size: 36px;
+                font-weight: 700;
+                margin-bottom: 15px;
+                color: #38bdf8;
+            }
+
+            .skills > .container > p {
+                color: #94a3b8;
+                font-size: 16px;
+                margin-bottom: 45px;
+            }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill-card {
+            background: #1e293b;
+            padding: 35px 20px;
+            border: 1px solid #334155;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+            .skill-card h3 {
+                font-size: 21px;
+                color: #38bdf8;
+                margin-bottom: 12px;
+            }
+
+            .skill-card p {
+                color: #cbd5e1;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            .skill-card:hover {
+                transform: translateY(-8px);
+                border-color: #38bdf8;
+                box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+            }
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills h2 {
+                font-size: 28px;
+            }
+        }
+
+
+        /* Footer */
+
+        /* ===== Premium Portfolio Footer ===== */
+
+        .premium-footer {
+            position: relative;
+            overflow: hidden;
+            background: #070d1b;
+            color: #cbd5e1;
+            padding: 75px 25px 25px;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+            /* Top Glow Effect */
+
+            .premium-footer::before {
+                content: "";
+                position: absolute;
+                top: -150px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 450px;
+                height: 250px;
+                background: rgba(14, 165, 233, 0.10);
+                filter: blur(90px);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+        /* Main Footer Layout */
+
+        .footer-main {
+            position: relative;
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr 1fr;
+            gap: 65px;
+        }
+
+        /* Brand */
+
+        .footer-logo {
+            display: inline-block;
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-decoration: none;
+            margin-bottom: 18px;
+        }
+
+            .footer-logo span {
+                color: #38bdf8;
+            }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 17px;
+            margin-bottom: 13px;
+        }
+
+        .footer-brand > p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.9;
+            max-width: 380px;
+            margin-bottom: 22px;
+        }
+
+        /* Availability Status */
+
+        .footer-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 30px;
+            color: #86efac;
+            font-size: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        /* Footer Columns */
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
+        }
+
+            .footer-column h3 {
+                color: #ffffff;
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .footer-column a {
+                width: fit-content;
+                color: #94a3b8;
+                font-size: 14px;
+                text-decoration: none;
+                transition: 0.3s ease;
+            }
+
+                .footer-column a:hover {
+                    color: #38bdf8;
+                    transform: translateX(6px);
+                }
+
+        .footer-location {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* Bottom Section */
+
+        .footer-bottom {
+            position: relative;
+            max-width: 1150px;
+            margin: 65px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+            .footer-bottom p {
+                color: #64748b;
+                font-size: 13px;
+            }
+
+                .footer-bottom p span {
+                    color: #cbd5e1;
+                }
+
+        .footer-heart {
+            color: #38bdf8 !important;
+        }
+
+        .back-to-top {
+            color: #38bdf8;
+            font-size: 13px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+            .back-to-top:hover {
+                color: #ffffff;
+                transform: translateY(-3px);
+            }
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .premium-footer {
+                padding: 55px 20px 25px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-logo {
+                font-size: 31px;
+            }
+        }
+
+
+        /* ===== Experience Section ===== */
+
+        .experience {
+            padding: 80px 20px;
+            background: #111827;
+            color: #ffffff;
+            text-align: center;
+        }
+
+            .experience h2 {
+                font-size: 36px;
+                color: #38bdf8;
+                margin-bottom: 12px;
+            }
+
+        .section-subtitle {
+            color: #94a3b8;
+            margin-bottom: 55px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            border-left: 3px solid #38bdf8;
+            text-align: left;
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+            .timeline-item::before {
+                content: "";
+                position: absolute;
+                left: -45px;
+                top: 25px;
+                width: 17px;
+                height: 17px;
+                background: #38bdf8;
+                border-radius: 50%;
+                border: 4px solid #111827;
+            }
+
+        .timeline-content {
+            background: #1e293b;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: 0.3s ease;
+        }
+
+            .timeline-content:hover {
+                transform: translateX(8px);
+                border-color: #38bdf8;
+                box-shadow: 0 8px 25px rgba(56, 189, 248, 0.12);
+            }
+
+            .timeline-content .date {
+                color: #38bdf8;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .timeline-content h3 {
+                font-size: 23px;
+                margin: 12px 0 5px;
+            }
+
+            .timeline-content h4 {
+                color: #94a3b8;
+                font-size: 17px;
+                margin-bottom: 15px;
+            }
+
+            .timeline-content p {
+                color: #cbd5e1;
+                line-height: 1.8;
+                font-size: 15px;
+            }
+
+        @media (max-width: 600px) {
+            .experience h2 {
+                font-size: 28px;
+            }
+
+            .timeline {
+                padding-left: 25px;
+            }
+
+            .timeline-item::before {
+                left: -35px;
+            }
+
+            .timeline-content {
+                padding: 20px;
+            }
+        }
+
+        /* ===== Broadcast Experience ===== */
+
+        .broadcast {
+            padding: 80px 20px;
+            background: #0f172a;
+            color: #fff;
+            text-align: center;
+        }
+
+            .broadcast h2 {
+                font-size: 36px;
+                color: #38bdf8;
+                margin-bottom: 12px;
+            }
+
+        .broadcast-card {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 35px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 15px;
+            text-align: left;
+            transition: 0.3s ease;
+        }
+
+            .broadcast-card:hover {
+                transform: translateY(-6px);
+                border-color: #38bdf8;
+                box-shadow: 0 10px 25px rgba(56,189,248,0.12);
+            }
+
+        .experience-tag {
+            display: inline-block;
+            padding: 7px 14px;
+            background: #0c4a6e;
+            color: #7dd3fc;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .broadcast-card h3 {
+            font-size: 25px;
+            margin: 20px 0 10px;
+        }
+
+        .broadcast-card h4 {
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .broadcast-card p,
+        .broadcast-card li {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .broadcast-card ul {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        .tournament {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+            .tournament span {
+                background: #334155;
+                color: #38bdf8;
+                padding: 9px 20px;
+                border-radius: 8px;
+                font-weight: bold;
+            }
+
+        @media (max-width: 600px) {
+            .broadcast h2 {
+                font-size: 27px;
+            }
+
+            .broadcast-card {
+                padding: 22px;
+            }
+
+                .broadcast-card h3 {
+                    font-size: 21px;
+                }
+        }
+
+        /* ===== Projects Section ===== */
+
+        .projects {
+            padding: 80px 20px;
+            background: #111827;
+            color: #ffffff;
+            text-align: center;
+        }
+
+            .projects h2 {
+                font-size: 36px;
+                color: #38bdf8;
+                margin-bottom: 12px;
+            }
+
+        .projects-container {
+            max-width: 1100px;
+            margin: 45px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            padding: 30px 25px;
+            border: 1px solid #334155;
+            border-radius: 15px;
+            text-align: left;
+            transition: 0.3s ease;
+        }
+
+            .project-card:hover {
+                transform: translateY(-8px);
+                border-color: #38bdf8;
+                box-shadow: 0 10px 25px rgba(56,189,248,0.12);
+            }
+
+        .project-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .project-card span {
+            display: inline-block;
+            background: #334155;
+            color: #7dd3fc;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin: 4px 3px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects h2 {
+                font-size: 28px;
+            }
+        }
+
+/* ===== Projects Section ===== */
+
+.projects {
+    padding: 80px 20px;
+    background: #111827;
+    color: #ffffff;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.projects-container {
+    max-width: 1100px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: #1e293b;
+    padding: 30px 25px;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(56,189,248,0.12);
+}
+
+.project-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.project-card h3 {
+    font-size: 21px;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.project-card span {
+    display: inline-block;
+    background: #334155;
+    color: #7dd3fc;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 4px 3px 0 0;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects h2 {
+        font-size: 28px;
+    }
+}
+
+        /* ===== Premium Contact Section ===== */
+
+        .contact-section {
+            padding: 100px 20px;
+            background: #0b1120;
+            color: #ffffff;
+        }
+
+        .contact-wrapper {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: #38bdf8;
+            letter-spacing: 4px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .contact-heading h2 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+            .contact-heading h2 span {
+                color: #38bdf8;
+            }
+
+        .contact-heading p {
+            color: #94a3b8;
+            max-width: 550px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 30px;
+        }
+
+        /* Left Contact Details */
+
+        .contact-details,
+        .contact-form-box {
+            background: rgba(30, 41, 59, 0.75);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 38px;
+        }
+
+            .contact-details h3,
+            .contact-form-box h3 {
+                font-size: 25px;
+                margin-bottom: 15px;
+            }
+
+            .contact-description,
+            .contact-form-box > p {
+                color: #94a3b8;
+                line-height: 1.8;
+                margin-bottom: 30px;
+            }
+
+        .contact-box {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 17px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+            border-radius: 12px;
+            font-size: 23px;
+        }
+
+        .contact-box small {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 7px;
+        }
+
+        .contact-box a,
+        .contact-box p {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0;
+            overflow-wrap: anywhere;
+        }
+
+            .contact-box a:hover {
+                color: #38bdf8;
+            }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+            .social-links a {
+                text-decoration: none;
+                color: #38bdf8;
+                padding: 10px 18px;
+                border: 1px solid #334155;
+                border-radius: 8px;
+                transition: 0.3s;
+            }
+
+                .social-links a:hover {
+                    background: #38bdf8;
+                    color: #0b1120;
+                }
+
+        /* Right Contact Form */
+
+        .contact-form-box form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form-box label {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .contact-form-box input,
+        .contact-form-box textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #0f172a;
+            color: white;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+            .contact-form-box input:focus,
+            .contact-form-box textarea:focus {
+                border-color: #38bdf8;
+                box-shadow: 0 0 0 3px rgba(56,189,248,0.10);
+            }
+
+        .contact-form-box textarea {
+            resize: vertical;
+        }
+
+        .contact-form-box button {
+            padding: 15px;
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #082f49;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .contact-form-box button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(56,189,248,0.2);
+            }
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-heading h2 {
+                font-size: 32px;
+            }
+
+            .contact-details,
+            .contact-form-box {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .contact-section {
+                padding: 65px 15px;
+            }
+
+            .contact-heading h2 {
+                font-size: 28px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -
+
+    <!-- Professional Navigation Bar -->
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a href="#home" class="nav-logo">
+                SUMON<span>.</span>
+            </a>
+
+            <nav class="navbar">
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+
+                <a href="NewFolder3/Ziaur_Rahman_Sumon_CV.pdf.pdf"
+                   download
+                   class="nav-cv">
+                    Download CV ↓
+
+            </nav>
+
+            <a href="#contact" class="nav-button">
+                Let's Talk <span>↗</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h3>Hello, Welcome to My Portfolio</h3>
+
+            <h1>I'm <span>Ziaur Rahman Sumon</span></h1>
+
+            <h2>Operations & Aspiring Software Developer</h2>
+
+            <p>
+                I am passionate about technology,
+                web development and learning new skills.
+                Welcome to my personal portfolio.
+            </p>
+
+            <a href="#about" class="btn">Explore More</a>
+
+        </div>
+
+        <div class="profile-image">
+            <img src="/images/profile.jpg.jpeg"
+                 alt="Sumon Profile">
+        </div>
+
+    </section>
+    </section>
+
+    <!-- About Section -->
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+
+            <div class="about-content">
+                <h3>Hi, I'm Ziaur Rahman Sumon</h3>
+
+                <p>
+                    I am a Computer Science and Engineering graduate
+                    from Dhaka International University, Bangladesh.
+                    I have professional experience in E-Commerce
+                    Operations, Logistics Management, and
+                    Last-Mile Distribution.
+                </p>
+
+                <p>
+                    I am passionate about technology, software
+                    development, and problem-solving. I am currently
+                    enhancing my skills in ASP.NET Core MVC,
+                    C#, SQL Server, HTML, and CSS.
+                </p>
+
+                <p>
+                    My goal is to combine my operational experience
+                    with technical knowledge to build innovative
+                    and practical software solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!--
+        <section class="skills" id="skills">
+
+            <h2>My Skills</h2>
+
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">C#</div>
+            <div class="skill-box">ASP.NET Core</div>
+            <div class="skill-box">SQL Server</div>
+            <div class="profile-card">
+                <h2>Sumon</h2>
+                <p>Web Developer</p>
+                <p>Learning ASP.NET Core</p>
+            </div>
+         -->
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+
+            <h2>My Skills</h2>
+            <p>Technologies and tools I work with.</p>
+
+            <div class="skills-container">
+
+                <div class="skill-card">
+                    <h3>HTML5</h3>
+                    <p>Web Structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>CSS3</h3>
+                    <p>Web Design</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>C#</h3>
+                    <p>Programming</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>ASP.NET Core MVC</h3>
+                    <p>Web Development</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>SQL Server</h3>
+                    <p>Database Management</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Microsoft Excel</h3>
+                    <p>Data Management</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+
+            <h2>Work Experience</h2>
+            <p class="section-subtitle">
+                My Professional Journey
+            </p>
+
+            <div class="timeline">
+
+                <!-- Eshop LLC -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">November 2025 - Present</span>
+                        <h3>Junior Executive</h3>
+                        <h4>Eshop LLC</h4>
+
+                        <p>
+                            Managing daily E-Commerce operations,
+                            processing customer orders, coordinating
+                            with delivery partners and vendors, and
+                            supporting operational reporting.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Daraz Bangladesh -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">October 2021 - September 2025</span>
+                        <h3>Operation Associate</h3>
+                        <h4>Daraz Bangladesh</h4>
+
+                        <p>
+                            Experienced in Last-Mile Distribution,
+                            Vehicle Requisition, Vendor Management,
+                            Workforce Management, Team Management,
+                            and E-Commerce Logistics Operations.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports & Broadcast Experience -->
+    <section id="broadcast" class="broadcast">
+        <div class="container">
+
+            <h2>Sports & Broadcast Experience</h2>
+            <p class="section-subtitle">
+                Live Event Operations & Broadcast Support
+            </p>
+
+            <div class="broadcast-card">
+
+                <span class="experience-tag">
+                    Event-Based Experience
+                </span>
+
+                <h3>Giant Screen Operation & Live Broadcast Support</h3>
+
+                <h4>Bangladesh Football Federation (BFF)</h4>
+
+                <p>
+                    Worked in giant screen operations and live
+                    broadcast support during national and
+                    international football tournaments.
+                </p>
+
+                <ul>
+                    <li>Live Graphics Control & Display Operations</li>
+                    <li>OBS Studio & Singular.Live</li>
+                    <li>Live Streaming Workflow Management</li>
+                    <li>Real-Time Content Monitoring</li>
+                    <li>Hardware, Software & Network Troubleshooting</li>
+                    <li>Technical Support During International Matches</li>
+                </ul>
+
+                <div class="tournament">
+                    <span>FIFA</span>
+                    <span>AFC</span>
+                    <span>SAFF</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+
+            <h2>My Projects</h2>
+            <p class="section-subtitle">
+                Some of my work and learning projects
+            </p>
+
+            <div class="projects-container">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-icon">💻</div>
+                    <h3>Personal Portfolio Website</h3>
+                    <p>
+                        A responsive personal portfolio website
+                        built using HTML, CSS and modern web design
+                        techniques to showcase my skills and experience.
+                    </p>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-icon">🛒</div>
+                    <h3>Retail Shop Management System</h3>
+                    <p>
+                        A retail shop management application
+                        designed to manage sales, purchases,
+                        inventory, customers and reports.
+                    </p>
+                    <span>ASP.NET Core MVC</span>
+                    <span>SQL Server</span>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-icon">📊</div>
+                    <h3>Data Management System</h3>
+                    <p>
+                        A database-based application concept
+                        for managing records, organizing information
+                        and generating reports efficiently.
+                    </p>
+                    <span>C#</span>
+                    <span>SQL Server</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Contact Section -->
+    <section id="contact" class="contact-section">
+
+        <div class="contact-wrapper">
+
+            <div class="contact-heading">
+                <span class="section-label">GET IN TOUCH</span>
+                <h2>Let's Work <span>Together</span></h2>
+                <p>
+                    Have a project, an opportunity, or just want to
+                    connect? I'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Left Side -->
+                <div class="contact-details">
+
+                    <h3>Contact Information</h3>
+
+                    <p class="contact-description">
+                        Feel free to reach out. I am always open
+                        to discussing new opportunities and ideas.
+                    </p>
+
+                    <div class="contact-box">
+                        <div class="contact-icon">✉</div>
+                        <div>
+                            <small>Email Address</small>
+                            <a href="mailto:ziaurrahmansumon731@gmail.com
+">
+                                ziaurrahmansumon731@gmail.com
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-box">
+                        <div class="contact-icon">☎</div>
+                        <div>
+                            <small>Phone Number</small>
+                            <a href="tel:+8801XXXXXXXXX">
+                                +880 1781826763
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-box">
+                        <div class="contact-icon">⌖</div>
+                        <div>
+                            <small>Location</small>
+                            <p> Bottola,Khilkkhet,Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ziaur-rahman-sumon-25549025a/" target="_blank">LinkedIn</a>
+
+                    </div>
+
+                </div>
+
+                <!-- Right Side -->
+                <div class="contact-form-box">
+
+                    <h3>Send Me a Message</h3>
+                    <p>I'll get back to you as soon as possible.</p>
+
+                    <form>
+
+                        <label>Your Name</label>
+                        <input type="text"
+                               placeholder="Enter your full name"
+                               required>
+
+                        <label>Email Address</label>
+                        <input type="email"
+                               placeholder="Enter your email"
+                               required>
+
+                        <label>Subject</label>
+                        <input type="text"
+                               placeholder="What is this about?"
+                               required>
+
+                        <label>Your Message</label>
+                        <textarea rows="5"
+                                  placeholder="Write your message here..."
+                                  required></textarea>
+
+                        <button type="submit">
+                            Send Message →
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    </section>
+
+    <!-- Footer -->
+    <!-- Premium Portfolio Footer -->
+    <footer class="premium-footer">
+
+        <div class="footer-main">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="#home" class="footer-logo">
+                    SUMON<span>.</span>
+                </a>
+
+                <h3>Computer Science Graduate</h3>
+
+                <p>
+                    Aspiring Software Developer passionate about
+                    technology, problem-solving and creating
+                    meaningful digital experiences.
+                </p>
+
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    Open to Professional Opportunities
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#skills">Technical Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">My Projects</a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+
+                <a href="#contact">Contact Me</a>
+
+                <a href="mailto:your-email@gmail.com">
+                    Email Me
+                </a>
+
+                <a href="#" target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn Profile
+                </a>
+
+                <a href="#" target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub Profile
+                </a>
+
+                <p class="footer-location">
+                    Dhaka, Bangladesh
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 <span>Ziaur Rahman Sumon</span>.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Designed & Developed with
+                <span class="footer-heart">♥</span> by Sumon
+            </p>
+
+            <a href="#home" class="back-to-top">
+                Back to Top ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>
